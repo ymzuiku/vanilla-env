@@ -15,7 +15,8 @@
     "build:cjs": "esbuild src/index.ts --outdir=cjs --target=es6 --format=cjs",
     "build": "npm run build:esm && npm run build:cjs",
     "test": "jest --watch",
-    "lint": "npx prettier --write ./src && npx eslint --ext .tsx,.ts,.js --fix ./src"
+    "lint2": "npx prettier --write ./src && npx eslint --ext .tsx,.ts,.js --fix ./src",
+    "prepare": "husky install"
   },
   "prettier": {
     "trailingComma": "all",
@@ -35,7 +36,9 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
-    "jest": "^27.1.0"
+    "jest": "^27.1.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2"
   },
   "license": "ISC",
   "keywords": [],
@@ -50,5 +53,9 @@
   "bugs": {
     "url": "https://github.com/ymzuiku/vanilla-env/issues"
   },
-  "homepage": "https://github.com/ymzuiku/vanilla-env#readme"
+  "homepage": "https://github.com/ymzuiku/vanilla-env#readme",
+  "lint-staged": {
+    "*.{tsx,ts,js}": "eslint --cache --fix",
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }
