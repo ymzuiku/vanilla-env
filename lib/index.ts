@@ -4,7 +4,7 @@ import fs from "fs";
 // pre
 const cwd = process.cwd();
 
-const b: any = {};
+const c: any = {};
 
 const parse = (file: string) => {
   const out = {} as { [key: string]: number | string };
