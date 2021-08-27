@@ -18,8 +18,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.ts": "npx eslint --cache --fix",
-    "*.tsx": "npx eslint --cache --fix"
+    "**/*.ts": "npx eslint --cache --fix",
+    "**/*.tsx": "npx eslint --cache --fix"
   },
   "prettier": {
     "trailingComma": "all",
