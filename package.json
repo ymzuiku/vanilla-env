@@ -10,18 +10,37 @@
     "esm",
     "index.ts"
   ],
-  "exports": {
-    "import": "./index.ts"
-  },
   "scripts": {
     "build:esm": "esbuild lib/index.ts --outdir=esm --target=es6 --format=esm",
     "build:cjs": "esbuild lib/index.ts --outdir=cjs --target=es6 --format=cjs",
     "build": "npm run build:esm && npm run build:cjs",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*": "npx prettier --write --ignore-unknown"
+    "*.(ts|tsx)": "eslint --cache --fix",
+    "*.js": "eslint --cache --fix"
   },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "printWidth": 140,
+    "singleQuote": false
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "esbuild": "^0.12.24",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.2",
+    "jest": "^27.1.0",
+    "lint-staged": "^11.1.2"
+  },
+  "license": "ISC",
   "keywords": [],
   "author": "",
   "repository": {
@@ -34,17 +53,5 @@
   "bugs": {
     "url": "https://github.com/ymzuiku/vanilla-env/issues"
   },
-  "homepage": "https://github.com/ymzuiku/vanilla-env#readme",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.29.3",
-    "@typescript-eslint/parser": "^4.29.3",
-    "esbuild": "^0.12.24",
-    "esbuild-jest": "^0.5.0",
-    "eslint": "^7.32.0",
-    "husky": "^7.0.2",
-    "jest": "^27.1.0",
-    "lint-staged": "^11.1.2"
-  }
+  "homepage": "https://github.com/ymzuiku/vanilla-env#readme"
 }

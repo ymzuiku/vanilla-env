@@ -1,8 +1,10 @@
 import { resolve } from "path";
 import fs from "fs";
 
-// pre22
+// pre
 const cwd = process.cwd();
+
+const a:any = {};
 
 const parse = (file: string) => {
   const out = {} as { [key: string]: number | string };
