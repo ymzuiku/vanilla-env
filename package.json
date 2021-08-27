@@ -1,8 +1,8 @@
 {
   "name": "vanilla-env",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
-  "main": "cjs/index.ts",
+  "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "index.ts",
   "files": [
