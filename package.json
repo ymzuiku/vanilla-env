@@ -1,0 +1,50 @@
+{
+  "name": "vanilla-env",
+  "version": "0.1.0",
+  "description": "",
+  "main": "cjs/index.ts",
+  "module": "esm/index.js",
+  "types": "index.ts",
+  "files": [
+    "cjs",
+    "esm",
+    "index.ts"
+  ],
+  "exports": {
+    "import": "./index.ts"
+  },
+  "scripts": {
+    "build:esm": "esbuild lib/index.ts --outdir=esm --target=es6 --format=esm",
+    "build:cjs": "esbuild lib/index.ts --outdir=cjs --target=es6 --format=cjs",
+    "build": "npm run build:esm && npm run build:cjs",
+    "test": "jest --watch"
+  },
+  "lint-staged": {
+    "**/*": "npx prettier --write --ignore-unknown"
+  },
+  "keywords": [],
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymzuiku/vanilla-env.git"
+  },
+  "bin": {
+    "air": "lib/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ymzuiku/vanilla-env/issues"
+  },
+  "homepage": "https://github.com/ymzuiku/vanilla-env#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "esbuild": "^0.12.24",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
+    "jest": "^27.1.0",
+    "lint-staged": "^11.1.2"
+  }
+}
