@@ -1,6 +1,6 @@
 {
   "name": "vanilla-env",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "cjs/index.ts",
   "module": "esm/index.js",
@@ -15,8 +15,7 @@
     "build:cjs": "esbuild src/index.ts --outdir=cjs --target=es6 --format=cjs",
     "build": "npm run build:esm && npm run build:cjs",
     "test": "jest --watch",
-    "lint2": "npx prettier --write ./src && npx eslint --ext .tsx,.ts,.js --fix ./src",
-    "prepare": "husky install"
+    "prepare": "husky install && npm run build"
   },
   "prettier": {
     "trailingComma": "all",
@@ -55,7 +54,7 @@
   },
   "homepage": "https://github.com/ymzuiku/vanilla-env#readme",
   "lint-staged": {
-    "*.{tsx,ts,js}": "eslint --cache --fix",
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{tsx,ts,js}": "eslint --cache --fix"
   }
 }

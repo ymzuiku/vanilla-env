@@ -4,23 +4,18 @@ import fs from "fs";
 // pre
 const cwd = process.cwd();
 
-const l1 = "dog";
-console.log(l1);
-
 const parse = (file: string) => {
   const out = {} as { [key: string]: number | string };
   String(file)
     .split("\n")
     .forEach((line) => {
       if (/=/.test(line)) {
-        const [k, v] = line.split("=");
-        let _k = k.replace(/^"|"$/g, "");
-        _k = _k.replace(/^'|'$/g, "");
+        const [k, v] = line.split("=").map((v) => v.replace(/^"|"$/g, "").replace(/^'|'$/g, ""));
         const _v = Number(v);
         if (isNaN(_v)) {
-          out[_k] = v;
+          out[k] = v;
         } else {
-          out[_k] = _v;
+          out[k] = _v;
         }
       }
     });
@@ -35,7 +30,6 @@ const env = {
     }
     const file = fs.readFileSync(p);
     const data = parse(String(file));
-    console.log(data);
 
     Object.keys(data).forEach((k) => {
       if (process.env[k] === undefined) {
