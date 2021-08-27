@@ -5,7 +5,7 @@ import fs from "fs";
 const cwd = process.cwd();
 
 const l1 = "dog";
-console.log(l1)
+console.log(l1);
 
 const parse = (file: string) => {
   const out = {} as { [key: string]: number | string };
