@@ -1,7 +1,7 @@
 import { resolve } from "path";
 import fs from "fs";
 
-// pre
+// pre22
 const cwd = process.cwd();
 
 const parse = (file: string) => {
