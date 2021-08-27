@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint"],
   rules: {
+    "@typescript-eslint/no-unused-vars": 2,
     "@typescript-eslint/explicit-module-boundary-types": 0,
   },
 };
