@@ -18,7 +18,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*.ts": "npx eslint --cache --fix",
+    "**/*": "npx prettier --write --ignore-unknown",
     "**/*.tsx": "npx eslint --cache --fix"
   },
   "prettier": {
