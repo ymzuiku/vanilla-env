@@ -11,22 +11,20 @@
     "index.ts"
   ],
   "scripts": {
-    "build:esm": "esbuild lib/index.ts --outdir=esm --target=es6 --format=esm",
-    "build:cjs": "esbuild lib/index.ts --outdir=cjs --target=es6 --format=cjs",
+    "build:esm": "esbuild src/index.ts --outdir=esm --target=es6 --format=esm",
+    "build:cjs": "esbuild src/index.ts --outdir=cjs --target=es6 --format=cjs",
     "build": "npm run build:esm && npm run build:cjs",
     "test": "jest --watch",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "**/*": "npx prettier --write --ignore-unknown",
-    "**/*.tsx": "npx eslint --cache --fix"
+    "lint": "npx prettier --write ./src && npx eslint --ext .tsx,.ts,.js --fix ./src"
   },
   "prettier": {
     "trailingComma": "all",
     "tabWidth": 2,
     "semi": true,
-    "printWidth": 140,
-    "singleQuote": false
+    "printWidth": 120,
+    "singleQuote": false,
+    "jsxBracketSameLine": true,
+    "useTabs": false
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
@@ -36,7 +34,6 @@
     "esbuild-jest": "^0.5.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "husky": "^7.0.2",
     "jest": "^27.1.0",
     "lint-staged": "^11.1.2"
   },
