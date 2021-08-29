@@ -1,14 +1,14 @@
 {
   "name": "vanilla-env",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "",
   "main": "cjs/index.js",
   "module": "esm/index.js",
-  "types": "index.ts",
+  "types": "src/index.ts",
   "files": [
     "cjs",
     "esm",
-    "index.ts"
+    "src"
   ],
   "scripts": {
     "build:esm": "esbuild src/index.ts --outdir=esm --target=es6 --format=esm",
@@ -55,6 +55,6 @@
   "homepage": "https://github.com/ymzuiku/vanilla-env#readme",
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
-    "*.{tsx,ts,js}": "eslint --cache --fix"
+    "*.{tsx,ts}": "eslint --cache --fix"
   }
 }
