@@ -1,6 +1,6 @@
 {
   "name": "vanilla-env",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -45,9 +45,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ymzuiku/vanilla-env.git"
-  },
-  "bin": {
-    "air": "lib/index.js"
   },
   "bugs": {
     "url": "https://github.com/ymzuiku/vanilla-env/issues"
